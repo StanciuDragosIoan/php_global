@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PDO_Refactoring_collaborators</title>
+    <title>Classes</title>
 </head>
 <body>
+
     <ul>
         <?php foreach($tasks as $task) : ?>
         <!-- can t access protected property like below (works only with public properties) -->
@@ -19,5 +20,8 @@
             </li>
         <?php endforeach; ?>
     </ul>
+ 
+         
+       
 </body>
 </html>
