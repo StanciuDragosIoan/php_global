@@ -3,23 +3,22 @@
 
 $query = require 'bootstrap.php';
   
-require 'Task.php';
+//instantiate router class
+$router = new Router();
 
-$tasks = $query->selectAll('todos');
+//require routes file
+//require 'routes.php';
+$router->define([
 
-//map tasks to the Task class and its properties manually
-// $tasks = array_map(function ($task) {
+	'' => 'controllers/index.php',
 
-//     $t =  new Task();
+	'about' => 'controllers/about.php',
 
-//     $t->description = $task['description'];
-// }, $tasks);
- 
+	'about/culture' => 'controllers/about-culture.php',
 
-//die(var_dump($tasks));
+	'contact' => 'controllers/contact.php'
 
-require 'index.view.php';
-
+]);
 
 
 ?>
