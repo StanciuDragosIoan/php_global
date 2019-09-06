@@ -1,0 +1,41 @@
+-created a core directory (added database folder + bootstrap file to it);
+-created a 'contact us' view and an 'about us' view and added them to a views folder together with the index.view.php;
+-created a controllers directory;
+-created an index.file in the controllers, and added the folowing lines to it:
+
+		
+    $tasks = $query->selectAll('todos');
+    require 'index.view.php';
+	
+    #now the main inex.php in the root only loads the bootstrap.php file;
+
+-inside the 'controllers' directory, created an about.php, about-culture.php, contact.php (3 controllers) + created the view for 
+about-culture;
+
+-created a 'routes.php' file and added the routes as array in there;
+	#instead of an array, made the routes to come from the method of an obj:
+
+
+	$router-> define([
+
+    		'' => 'controllers.index.php',
+
+    		'about' => 'controllers/about.php',
+
+    		'about/culture' => 'controllers/about-culture.php',
+
+    		'contact' => 'controllers/contact.php'
+	]);
+
+-created a Router.php class inside the 'core' directory;
+-required the Router class in the bootstrap.php + adjusted paths to other requires in there;
+
+-created a private property (routes = [];) inside the Router class, and a define() method for the routes;
+
+
+
+
+
+#how it works:
+
+-
