@@ -5,12 +5,11 @@
     protected $routes = [];
 
     public static function load($file) {
-        //use static or self to instantiate class inside static meth
+        //use static or self to instantiate class inside static method (where we can t use $this)
         $router = new static;
 
         //load file (routes.php)
         require $file;
-
 
         //return an instance of router
         return $router;

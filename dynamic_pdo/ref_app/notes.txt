@@ -1,0 +1,4 @@
+-set up a config file that returns an array with DB credentials + options (for the PDO Obj);
+-declared the $config var as require 'config.php' in bootstrap file;
+-passed the $config variable to the make() method in the Connection class and the config elements (DB credentials + access) to the try/catch
+block that connects to DB;

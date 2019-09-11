@@ -13,6 +13,21 @@
 
 
 
+
+//selectAll used to map a required class
+
+        // public function selectAll($table, $intoTask)
+
+        // {
+
+        //     $statement = $this->pdo->prepare("select * from {$table}");
+
+        //     $statement->execute();
+
+        //     return  $statement->fetchAll(PDO::FETCH_CLASS, $intoTask);
+ 
+        // }
+
         public function selectAll($table)
 
         {

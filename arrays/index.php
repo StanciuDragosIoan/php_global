@@ -1,22 +1,8 @@
-<?
-
-// $names = [
-//     'Jeff',
-//     'John',
-//     'Mary'
-// ];
-
-// foreach($names as $name){
-//     echo $name;
-// }
-
-// require 'index.view.php';
+<?php
 
 
-
-//array functions
-
-class Post {
+class Post 
+{
 
     public $title;
 
@@ -24,98 +10,103 @@ class Post {
 
     public $published;
 
-    public function __construct($title, $author, $published) 
-    {
 
+    public function __construct($title, $author, $published){
         $this->title = $title;
-
         $this->author = $author;
-
         $this->published = $published;
     }
 }
 
+ 
 $posts = [
-
     new Post('My first post', 'JW', true),
 
-    new Post('My second post', 'JW', true),
+    new Post('My second post','JW', true),
 
-    new Post('My third post', 'JW', true),
+    new Post('My third post', 'KW', true),
 
-    new Post('My fourth post', 'TW', false),
+    new Post('My fourth post', 'TW', false)
 ];
 
- 
-
-//var_dump($posts);
-
-
-# ##############array_filter();
-
-
-//get unpublished posts
-// $unpublishedPosts = array_filter($posts, function ($post) {
-//     return ! $post->published;
-// });
-
-
-// //get published
-// $publishedPosts = array_filter($posts, function ($post) {
-//     return $post->published;
-// });
- 
-// var_dump($unpublishedPosts);
-
-
-
-
-
-
-# ################ array_map();   ->modifies every single one of the posts
-
-// $modified = array_map(function($post){
-//     $post->published = true;
-
-//     return $post;
-// }, $posts);
-
-
-#foreach();
-// foreach ($posts as $post) {
-//     $post->published = true;
-// }
 
 // var_dump($posts);
 
 
 
-// $modified = array_map(function($post){
-//     //make all post into an array
-//     //return (array) $post;
+//ARRAY_FILTER(array, callback); ->filters some elements from array
+
+//get unpublished posts
+$unpublished_posts = array_filter($posts, function ($post) {
+
+    return ! $post->published;
+
+});
+
+//get published posts
+$published_posts = array_filter($posts, function ($post){
+    return $post->published;
+});
 
 
-//     //return only the post title
-//     return ['title'=>$post->title];
-     
-// }, $posts);
 
 
+//ARRAY_MAP (callback, array)  -> iterates through all elements of array and modifies all of them
+
+$allPublishedPosts = array_map(function($post){
+
+ $post->published = true;
+
+ return  $post;
 
  
-// ################## array_column()  -->pulls certain values from an array
+}, $posts);
 
-//makes a single array of objects;
-$modified = array_column($posts, 'title');
-// $posts = array_map(function ($post){
-//     return (array) $post;
+
+$titlesAray = array_map(function($post){
+
+    //expose only the title of posts
+
+  // return (array) $post->title;
+  return ['title' => $post->title];
+}, $posts);
+
+
+//same effect as array_map() obtained with foreach();
+
+// foreach($posts as $post) {
+//     $post->published = true;
+// }
+
+
+
+//ARRAY_COLUMN(array, key)    ->get a subset of the data
+
+
+//use array_map
+
+// $titles = array_map(function($post){
+//     return $post->title;
 // }, $posts);
 
+
+//user array_column(array, key);  ->will not work with protected or private, only with public
 //$titles = array_column($posts, 'title');
 
+//make $posts an assoc array with foreach()
+// foreach($posts as $index => $post)
+// {
+//     $posts[$index] = (array) $post;
+// }
 
-//3rd argument represents the key for the post (in this case)
-$titles = array_column($posts, 'author', 'title');
+
+
+
+//make $posts assoc array with array_map()
+// $posts = array_map(function($post){
+//     return (array)$post;
+// }, $posts);
+
+$titles = array_column($posts, 'author', 'title');    //note 3rd argument (optional) can be used as the key for the resulting array
 var_dump($titles);
-
 ?>
