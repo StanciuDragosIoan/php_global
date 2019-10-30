@@ -34,11 +34,11 @@ $posts = [
 
 
 
-//ARRAY_FILTER(array, callback); ->filters some elements from array
+//ARRAY_FILTER(array, callback); ->filters some elements from array 
+//we pass the array as 1st arg and the callback function as 2nd arg
 
 //get unpublished posts
 $unpublished_posts = array_filter($posts, function ($post) {
-
     return ! $post->published;
 
 });

@@ -1,4 +1,4 @@
-<?
+<?php
 
 $animals = ['dog', 'cat'];
 

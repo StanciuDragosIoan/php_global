@@ -4,7 +4,7 @@
 
 
 require 'vendor/autoload.php'; 
- require 'core/bootstrap.php';
+require 'core/bootstrap.php';
  
  
  use App\Core\{Router, Request};

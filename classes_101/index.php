@@ -5,6 +5,7 @@ require 'functions.php';
  //CLASSES (e.g. Task, Comment, User, etc);
 
 class Task {
+    
     public $description;
 
     public $completed = false;
