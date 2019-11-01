@@ -1,6 +1,6 @@
 <?php
 
-require 'functions.php';
+// require 'functions.php';
  
  //CLASSES (e.g. Task, Comment, User, etc);
 

@@ -7,7 +7,7 @@
 
 			'username' => 'root',
 
-			'password' => '123456',
+			'password' => 'Cafea43@',
 
 			'connection' => 'mysql:host=127.0.0.1',
 

@@ -14,7 +14,7 @@ function dd($data) {
 function connectToDb() {
     try {
         //database type, host, database name, user, password 
-    return new PDO('mysql:host=127.0.0.1;dbname=mytodo', 'root', '123456'); 
+    return new PDO('mysql:host=127.0.0.1;dbname=mytodo', 'root', 'Cafea43@'); 
       
     } catch (PDOException $e) {
     
@@ -41,7 +41,7 @@ function fetchAllTasks($pdo) {
 
 
     // $tasks = $statement->fetchAll(PDO::FETCH_OBJ);
-    // $tasks = $statement->fetchAll(PDO::FETCH_OBJ);
+    // $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
     return  $statement->fetchAll(PDO::FETCH_CLASS, 'Task');
 }
 

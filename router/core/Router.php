@@ -5,7 +5,10 @@
     protected $routes = [];
 
     public static function load($file) {
-        //use static or self to instantiate class inside static method (where we can t use $this)
+        /*
+            use static or self to instantiate Router class inside static method (where we 
+            can t use $this)
+        */
         $router = new static;
 
         //load file (routes.php)
