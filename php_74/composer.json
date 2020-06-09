@@ -1,0 +1,17 @@
+{
+  "name": "jeffreyway/whats-new-in-php74",
+  "authors": [
+    {
+      "name": "Jeffrey Way",
+      "email": "jeffrey@jeffrey-way.com"
+    }
+  ],
+  "require": {
+    "illuminate/support": "^7.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "": "src/"
+    }
+  }
+}
